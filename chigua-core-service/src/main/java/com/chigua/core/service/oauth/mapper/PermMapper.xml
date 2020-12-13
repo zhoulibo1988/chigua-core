@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chigua.core.service.oauth.mapper.PermMapper">
+ <resultMap id="BaseResultMap" type="com.chigua.core.service.oauth.entity.Perm">
+     <id column="perm_id" jdbcType="BIGINT" property="permId"/>
+     <id column="perm_name" jdbcType="VARCHAR" property="permName"/>
+     <id column="perm_name_cn" jdbcType="VARCHAR" property="permNameCn"/>
+ </resultMap>
+    <select id="findAllByUserId" resultMap="BaseResultMap">
+            SELECT
+                p.*
+            FROM tb_user AS u
+            LEFT JOIN
+                tb_user_role AS ur ON u.user_id = ur.user_id
+
+            LEFT JOIN
+                tb_role AS r ON r.role_id = ur.role_id
+
+            LEFT JOIN
+                tb_role_perm AS rp ON r.role_id = rp.role_id
+
+            LEFT JOIN tb_perm AS p ON p.perm_id = rp.perm_id
+
+            WHERE u.user_id = #{userId}
+    </select>
+</mapper>
