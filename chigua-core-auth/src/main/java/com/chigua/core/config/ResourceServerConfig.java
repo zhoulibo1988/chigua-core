@@ -43,7 +43,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/v2/api-docs", "/swagger-resources/configuration/ui",
                         "/swagger-resources","/swagger-resources/configuration/security",
-                        "/swagger-ui.html","/css/**", "/js/**","/images/**", "/webjars/**", "**/favicon.ico", "/index","/doc.html")
+                        "/swagger-ui.html","/css/**", "/js/**","/images/**", "/webjars/**", "**/favicon.ico", "/index","/doc.html","/captcha")
                 .permitAll()
                 //对应认证服务器中用户的权限
                 .antMatchers("/admin/**").hasAuthority("PERM_ADMIN_SELECT")

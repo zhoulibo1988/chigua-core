@@ -9,23 +9,32 @@
 	</parent>
 
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>chigua-core-swagger</artifactId>
     <name>chigua-core-swagger</name>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${chigua.version}</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
             <groupId>com.chigua.core</groupId>
             <artifactId>chigua-core-tool</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <!--Swagger-->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
-            <version>${swagger.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>io.swagger</groupId>
@@ -36,18 +45,15 @@
         <dependency>
             <groupId>io.swagger</groupId>
             <artifactId>swagger-models</artifactId>
-            <version>${swagger.models.version}</version>
         </dependency>
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>swagger-bootstrap-ui</artifactId>
-            <version>${swagger.bootstrapui.version}</version>
         </dependency>
         <!--Swagger-->
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-micro-spring-boot-starter</artifactId>
-            <version>${knife4j.version}</version>
         </dependency>
     </dependencies>
 

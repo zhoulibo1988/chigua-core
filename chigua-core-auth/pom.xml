@@ -8,7 +8,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>chigua-core-auth</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>${chigua.version}</version>
 	<name>chigua-core-auth</name>
 	<packaging>jar</packaging>
 	<description>Demo project for Spring Boot</description>
@@ -21,17 +21,14 @@
 		<dependency>
 			<groupId>com.chigua.core</groupId>
 			<artifactId>chigua-core-service</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.chigua.core</groupId>
 			<artifactId>chigua-core-log</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.chigua.core</groupId>
 			<artifactId>chigua-core-swagger</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -48,6 +45,11 @@
 					<artifactId>junit-vintage-engine</artifactId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+		<!-- 验证码-->
+		<dependency>
+			<groupId>com.github.whvcse</groupId>
+			<artifactId>easy-captcha</artifactId>
 		</dependency>
 	</dependencies>
 </project>

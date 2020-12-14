@@ -7,9 +7,8 @@
 		<artifactId>chigua-core</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>com.chigua.core</groupId>
 	<artifactId>chigua-core-generator</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>${chigua.version}</version>
 	<name>chigua-core-generator</name>
 	<packaging>jar</packaging>
 	<description>chigua-core-generator</description>

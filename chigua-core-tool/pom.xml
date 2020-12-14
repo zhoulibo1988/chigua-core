@@ -2,13 +2,25 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>8</source>
+					<target>8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 	<parent>
 		<groupId>com.chigua.core</groupId>
 		<artifactId>chigua-core</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>chigua-core-tool</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>${chigua.version}</version>
 	<name>chigua-core-tool</name>
 	<packaging>jar</packaging>
 	<description>chigua-core-tool</description>
@@ -37,13 +49,11 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>${lombok.version}</version>
 		</dependency>
 		<!--Swagger-->
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
-			<version>${swagger.version}</version>
 			<exclusions>
 				<exclusion>
 					<groupId>io.swagger</groupId>
@@ -54,7 +64,6 @@
 		<dependency>
 			<groupId>io.swagger</groupId>
 			<artifactId>swagger-models</artifactId>
-			<version>${swagger.models.version}</version>
 		</dependency>
 		<dependency>
 			<groupId> org.springframework.boot </groupId>
@@ -65,13 +74,11 @@
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
-			<version>30.0-jre</version>
 		</dependency>
 		<!-- okhttp -->
 		<dependency>
 			<groupId>com.squareup.okhttp3</groupId>
 			<artifactId>okhttp</artifactId>
-			<version>3.11.0</version>
 		</dependency>
 	</dependencies>
 </project>
